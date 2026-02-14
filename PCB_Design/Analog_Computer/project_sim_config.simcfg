@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<ProjectConfig xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Settings>
+    <Version>1.1</Version>
+    <Affect>Project</Affect>
+  </Settings>
+  <Config />
+  <Documents>
+    <DocumentConfig>
+      <Name>Adder.SchDoc</Name>
+      <Id>PMJAIUZY</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Substractor.SchDoc</Name>
+      <Id>CLOYRJVU</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Power_IN.SchDoc</Name>
+      <Id>AAMSKPMU</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Gain.SchDoc</Name>
+      <Id>XPHJFVYJ</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>multiplier.SchDoc</Name>
+      <Id>HNULDRNM</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Differentiator.SchDoc</Name>
+      <Id>BVJUESRN</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Integrater.SchDoc</Name>
+      <Id>LWSWDDCT</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+    <DocumentConfig>
+      <Name>Multiply_2.SchDoc</Name>
+      <Id>ICMIQQCX</Id>
+      <Config />
+      <Results />
+    </DocumentConfig>
+  </Documents>
+  <Results />
+</ProjectConfig>
