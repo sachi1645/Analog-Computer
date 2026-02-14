@@ -8,7 +8,7 @@
 ---
 
 ## 🧮 Key Functionalities
-[cite_start]The device performs the following mathematical operations using analog circuitry[cite: 12]:
+The device performs the following mathematical operations using analog circuitry:
 * [cite_start]**Addition** [cite: 13]
 * [cite_start]**Subtraction** [cite: 14]
 * [cite_start]**Multiplication** [cite: 15]
@@ -18,24 +18,24 @@
 ---
 
 ## 🛠 Technical Specifications
-[cite_start]The device parameters achieved during the final implementation are as follows[cite: 347]:
+The device parameters achieved during the final implementation are as follows:
 
 | Parameter | Value |
 | :--- | :--- |
-| **Supply Voltage** | [cite_start]$\pm 12V$ (Recommended), Max $\pm 18V$ [cite: 348] |
-| **Bandwidth** | [cite_start]$1\text{ kHz} - 10\text{ kHz}$ [cite: 351] |
-| **Input Current** | [cite_start]Max $10\text{ mA}$ [cite: 349] |
-| **Output Voltage** | [cite_start]$\pm 12V$ [cite: 350] |
-| **Maximum Noise Level** | [cite_start]$100\text{ mV}$ [cite: 352] |
-| **Accuracy** | [cite_start]$\pm (1-10)\%$ [cite: 353] |
-| [cite_start]**Maximum Gain** | x10 [cite: 354] |
+| **Supply Voltage** | [cite_start]$\pm 12V$ (Recommended), Max $\pm 18V$ [cite: 348, 356] |
+| **Bandwidth** | [cite_start]$1\text{ kHz} - 10\text{ kHz}$ [cite: 357] |
+| **Input Current** | [cite_start]Max $10\text{ mA}$ [cite: 355] |
+| **Output Voltage** | [cite_start]$\pm 12V$ [cite: 356] |
+| **Maximum Noise Level** | [cite_start]$100\text{ mV}$ [cite: 358] |
+| **Accuracy** | [cite_start]$\pm (1-10)\%$ [cite: 359] |
+| [cite_start]**Maximum Gain** | x10 [cite: 360] |
 
 ---
 
 ## 🔌 Circuit Design & Components
 
 ### Component Selection
-* **Op-Amp (UA741):** Selected for affordability and stability. [cite_start]Its bandwidth (~1 MHz) is sufficient for the project's target signal range[cite: 28, 30, 31].
+* [cite_start]**Op-Amp (UA741):** Selected for its affordability and stability[cite: 30, 32]. [cite_start]The ~1 MHz bandwidth is sufficient for the project's target signal range[cite: 31].
 * [cite_start]**Resistors (1 kΩ):** * Chosen over smaller values (e.g., $100\Omega$) to reduce current draw and power consumption[cite: 68].
     * [cite_start]Chosen over larger values (e.g., $100\text{ k}\Omega$) to prevent filtering of the input signal and bandwidth reduction[cite: 69, 70].
 * **Diodes:**
@@ -43,10 +43,10 @@
     * [cite_start]**1N4007:** Used in the power supply rectifier for its high Peak Reverse Voltage ($1000V$) and 1A current handling[cite: 47, 48, 49].
 
 ### Mathematical Modules
-1.  [cite_start]**Adder & Subtractor:** Implemented using standard inverting op-amp configurations with $1\text{ k}\Omega$ resistors for optimal bandwidth/power balance[cite: 67, 114].
+1.  [cite_start]**Adder & Subtractor:** Implemented using standard inverting op-amp configurations with $1\text{ k}\Omega$ resistors for optimal bandwidth/power balance[cite: 71, 118].
 2.  **Multiplier (Log-Antilog):**
     * [cite_start]**Issue:** Initially attempted using a Gilbert Cell, but mismatches in BJTs caused non-linear behavior[cite: 343].
-    * [cite_start]**Solution:** Replaced with a Log-Antilog multiplier circuit using diodes and op-amps[cite: 344]. [cite_start]This improved linearity and generated the correct mathematical output ($V_{out} = V_1 \cdot V_2$)[cite: 345].
+    * **Solution:** Replaced with a Log-Antilog multiplier circuit using diodes and op-amps. [cite_start]This improved linearity and generated the correct mathematical output ($V_{out} = V_1 \cdot V_2$)[cite: 344, 345].
     * [cite_start]**Design Note:** Larger input resistors were used here to ensure small currents for a predictable log function[cite: 163, 164].
 3.  [cite_start]**Power Supply:** A dedicated module providing a fixed $\pm 12V$ using **LM7812** and **LM7912** voltage regulators[cite: 35, 36].
 
