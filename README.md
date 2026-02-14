@@ -1,19 +1,19 @@
 # Analog Computer Project - Team Hypertronics
 
 ## 📖 Overview
-[cite_start]**Team Hypertronics** developed this project for the **EN2091 - Laboratory Practice and Projects** module[cite: 1, 3]. [cite_start]It demonstrates the functionality of operational amplifier (op-amp) circuits in performing fundamental analog computations[cite: 12]. [cite_start]The system is designed to process signals within the **1 Hz to 10 kHz** frequency range[cite: 18].
+**Team Hypertronics** developed this project for the **EN2091 - Laboratory Practice and Projects** module. It demonstrates the functionality of operational amplifier (op-amp) circuits in performing fundamental analog computations. The system is designed to process signals within the **1 Hz to 10 kHz** frequency range.
 
-[cite_start]The analog computer features a dual-channel input interface, adjustable gain control mechanisms, and a modular, stable power supply system[cite: 18].
+The analog computer features a dual-channel input interface, adjustable gain control mechanisms, and a modular, stable power supply system.
 
 ---
 
 ## 🧮 Key Functionalities
 The device performs the following mathematical operations using analog circuitry:
-* [cite_start]**Addition** [cite: 13]
-* [cite_start]**Subtraction** [cite: 14]
-* [cite_start]**Multiplication** [cite: 15]
-* [cite_start]**Integration** [cite: 16]
-* [cite_start]**Differentiation** [cite: 17]
+* **Addition**
+* **Subtraction**
+* **Multiplication**
+* **Integration**
+* **Differentiation**
 
 ---
 
@@ -22,55 +22,55 @@ The device parameters achieved during the final implementation are as follows:
 
 | Parameter | Value |
 | :--- | :--- |
-| **Supply Voltage** | [cite_start]$\pm 12V$ (Recommended), Max $\pm 18V$ [cite: 348, 356] |
-| **Bandwidth** | [cite_start]$1\text{ kHz} - 10\text{ kHz}$ [cite: 357] |
-| **Input Current** | [cite_start]Max $10\text{ mA}$ [cite: 355] |
-| **Output Voltage** | [cite_start]$\pm 12V$ [cite: 356] |
-| **Maximum Noise Level** | [cite_start]$100\text{ mV}$ [cite: 358] |
-| **Accuracy** | [cite_start]$\pm (1-10)\%$ [cite: 359] |
-| [cite_start]**Maximum Gain** | x10 [cite: 360] |
+| **Supply Voltage** | $\pm 12V$ (Recommended), Max $\pm 18V$ |
+| **Bandwidth** | $1\text{ kHz} - 10\text{ kHz}$ |
+| **Input Current** | Max $10\text{ mA}$ |
+| **Output Voltage** | $\pm 12V$ |
+| **Maximum Noise Level** | $100\text{ mV}$ |
+| **Accuracy** | $\pm (1-10)\%$ |
+| **Maximum Gain** | x10 |
 
 ---
 
 ## 🔌 Circuit Design & Components
 
 ### Component Selection
-* [cite_start]**Op-Amp (UA741):** Selected for its affordability and stability[cite: 30, 32]. [cite_start]The ~1 MHz bandwidth is sufficient for the project's target signal range[cite: 31].
-* [cite_start]**Resistors (1 kΩ):** * Chosen over smaller values (e.g., $100\Omega$) to reduce current draw and power consumption[cite: 68].
-    * [cite_start]Chosen over larger values (e.g., $100\text{ k}\Omega$) to prevent filtering of the input signal and bandwidth reduction[cite: 69, 70].
+* **Op-Amp (UA741):** Selected for its affordability and stability. The ~1 MHz bandwidth is sufficient for the project's target signal range.
+* **Resistors (1 kΩ):** * Chosen over smaller values (e.g., $100\Omega$) to reduce current draw and power consumption.
+    * Chosen over larger values (e.g., $100\text{ k}\Omega$) to prevent filtering of the input signal and bandwidth reduction.
 * **Diodes:**
-    * [cite_start]**1N4148:** Used for small signals due to low junction capacitance, fast switching, and thermal stability[cite: 41, 42, 43].
-    * [cite_start]**1N4007:** Used in the power supply rectifier for its high Peak Reverse Voltage ($1000V$) and 1A current handling[cite: 47, 48, 49].
+    * **1N4148:** Used for small signals due to low junction capacitance, fast switching, and thermal stability.
+    * **1N4007:** Used in the power supply rectifier for its high Peak Reverse Voltage ($1000V$) and 1A current handling.
 
 ### Mathematical Modules
-1.  [cite_start]**Adder & Subtractor:** Implemented using standard inverting op-amp configurations with $1\text{ k}\Omega$ resistors for optimal bandwidth/power balance[cite: 71, 118].
+1.  **Adder & Subtractor:** Implemented using standard inverting op-amp configurations with $1\text{ k}\Omega$ resistors for optimal bandwidth/power balance.
 2.  **Multiplier (Log-Antilog):**
-    * [cite_start]**Issue:** Initially attempted using a Gilbert Cell, but mismatches in BJTs caused non-linear behavior[cite: 343].
-    * **Solution:** Replaced with a Log-Antilog multiplier circuit using diodes and op-amps. [cite_start]This improved linearity and generated the correct mathematical output ($V_{out} = V_1 \cdot V_2$)[cite: 344, 345].
-    * [cite_start]**Design Note:** Larger input resistors were used here to ensure small currents for a predictable log function[cite: 163, 164].
-3.  [cite_start]**Power Supply:** A dedicated module providing a fixed $\pm 12V$ using **LM7812** and **LM7912** voltage regulators[cite: 35, 36].
+    * **Issue:** Initially attempted using a Gilbert Cell, but mismatches in BJTs caused non-linear behavior.
+    * **Solution:** Replaced with a Log-Antilog multiplier circuit using diodes and op-amps. This improved linearity and generated the correct mathematical output ($V_{out} = V_1 \cdot V_2$).
+    * **Design Note:** Larger input resistors were used here to ensure small currents for a predictable log function.
+3.  **Power Supply:** A dedicated module providing a fixed $\pm 12V$ using **LM7812** and **LM7912** voltage regulators.
 
 ---
 
 ## 💻 Simulation & Tools
 The project utilized a combination of simulation software and hardware implementation:
-* [cite_start]**Simulink:** Used for initial block-level simulation and verifying mathematical logic[cite: 175].
-* [cite_start]**LTSpice:** Used for circuit-level simulation[cite: 204].
-* [cite_start]**PCB Design:** Custom PCBs designed for the computing modules and power supply[cite: 326].
+* **Simulink:** Used for initial block-level simulation and verifying mathematical logic.
+* **LTSpice:** Used for circuit-level simulation.
+* **PCB Design:** Custom PCBs designed for the computing modules and power supply.
 
 ---
 
 ## ⚠️ Challenges & Solutions
-* [cite_start]**Challenge:** Non-linearity in the multiplier circuit due to BJT mismatches in the Gilbert cell architecture[cite: 343].
-* [cite_start]**Solution:** Transitioned to a **Log-Antilog multiplier** design with specific modifications, which successfully linearized the output[cite: 344, 345].
+* **Challenge:** Non-linearity in the multiplier circuit due to BJT mismatches in the Gilbert cell architecture.
+* **Solution:** Transitioned to a **Log-Antilog multiplier** design with specific modifications, which successfully linearized the output.
 
 ---
 
 ## 👥 Team Hypertronics
-* [cite_start]**Wijesinghe U.G.S.K.D:** Simulation, Component Selection, PCB Schematic Design [cite: 367, 368]
-* [cite_start]**Dilhara D.S:** PCB Design, Breadboard Implementation [cite: 370, 371]
-* [cite_start]**Wijesekara W.A.G.S:** Power Supply Design, Soldering [cite: 373, 374]
-* [cite_start]**Upekshani T.S:** Enclosure Design, Breadboard Implementation [cite: 376, 377, 378]
+* **Wijesinghe U.G.S.K.D:** Simulation, Component Selection, PCB Schematic Design
+* **Dilhara D.S:** PCB Design, Breadboard Implementation
+* **Wijesekara W.A.G.S:** Power Supply Design, Soldering
+* **Upekshani T.S:** Enclosure Design, Breadboard Implementation
 
 ---
 *University of Moratuwa - Dept. of Electronic & Telecommunication Engineering*
